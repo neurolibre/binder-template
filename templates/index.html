@@ -16,13 +16,13 @@
           <h3 style="color: #762121;">Turn reading articles into an interactive experience</h3>
           <hr>
           <div id="explanation">
-            ⚠️ This service is reserved for <a href="https://neurolibre.org">Neurolibre</a> preprints that have been published. ⚠️
+            You can use this service to build a reproducible runtime for your Neurolibre-ready repository.
           </div>
           <hr>
         </div>
-        <!-- <div id="tutorials" class="text-center">
+        <div id="tutorials" class="text-center">
           <h2>New to NeuroLibre? Get started with a <a href="https://github.com/neurolibre/mystical-article" target="_blank">MyST article template</a> in Python.</h2>
-        </div> -->
+        </div>
     {% endblock header %}
 
     {% block form %}
@@ -30,7 +30,7 @@
     <div class="alert alert-warning" role="alert">
         Please visit <a href="https://preview-binder.conp.cloud">https://preview-binder.conp.cloud</a> to build a reproducible runtime from your Neurolibre-ready repository.
     </div>
-      <!-- <h4 id="form-header" class='row'>Please visit <a href="https://neurolibre.org">neurolibre.org</a> to build a reproducible runtime for your preprint</h4>
+      <h4 id="form-header" class='row'>Please visit <a href="https://neurolibre.org">neurolibre.org</a> to build a reproducible runtime for your preprint</h4>
       <input type="hidden" id="provider_prefix" value="{{repo_providers.keys() | list | first}}"/>
       <div class="form-group row">
         <label for="repository">{{(repo_providers.values() | list | first).labels.text}}</label>
@@ -159,18 +159,16 @@
           <div id="log"></div>
         </div>
       </div> 
-    -->
     </form>
     {% endblock form %}
     </div>
   </div>
   {% block how_it_works %}
-  <!-- <div id="how-it-works">
-    <h3 class="text-center">How it works</h3>
-
+  <div id="how-it-works">
+    <h3 class="text-center">Living preprints in 4 steps</h3>
     <div class="row">
         <div class="col-md-1 col-md-offset-2 point-container">
-          <span class="point point-orange">0</span>
+          <span class="point point-red">1</span>
         </div>
         <div class="col-md-7 front">
           <span class="front-em">Data requirement?</span><br />If your executable content requires data to generate outputs, NeuroLibre expects a <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html#the-binder-folder-data"><code>data_requirement.json</code></a> file under the <code>binder</code> directory of your repository to download and link it to your reproducible preprint environment. <b>Please make a <a href="https://github.com/neurolibre/neurolibre/issues/new?assignees=&labels=data+requirement&template=data-requirement.md&title=%5BData+Requirement%5D">data download request</a> for us to approve hosting your data!</b> If your preprint does not require data, you can skip this step.
@@ -179,7 +177,7 @@
 
     <div class="row">
       <div class="col-md-1 col-md-offset-2 point-container">
-        <span class="point point-orange">1</span>
+        <span class="point point-orange">2</span>
       </div>
       <div class="col-md-7 front">
         <span class="front-em">Enter your <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html">Neurolibre compatible repository</a> information</span><br />Provide in the above form a URL to your repository. Clicking launch will build your Binder repository that will be used to build your article during our technical review.
@@ -188,7 +186,7 @@
 
     <div class="row">
       <div class="col-md-1 col-md-offset-2 point-container">
-        <span class="point point-red">2</span>
+        <span class="point point-red">3</span>
       </div>
       <div class="col-md-7 front">
         <span class="front-em">Your executable content needs a Docker image!</span><br />Binder will search for a <a href="https://repo2docker.readthedocs.io/en/latest/specification.html">REES</a> compatible dependency file, such as <code>requirements.txt</code> or <code>environment.yml</code>, in the repository's  <code>binder</code> directory (<a href="http://mybinder.readthedocs.io/en/latest/using.html#preparing-a-repository-for-binder">more details on more complex dependencies in documentation</a>). The dependency files will be used to build a Docker image. If an image has already been built for the given repository, it will not be rebuilt. If a new commit has been made, the image will automatically be rebuilt.
@@ -197,13 +195,13 @@
 
     <div class="row">
       <div class="col-md-1 col-md-offset-2 point-container">
-        <span class="point point-blue">3</span>
+        <span class="point point-blue">4</span>
       </div>
       <div class="col-md-7 front">
-        <span class="front-em">Get ready for your technical review!</span><br />A <a href="https://jupyterhub.readthedocs.io/en/latest/">JupyterHub</a> server will host your repository's contents. We offer you a reusable link and badge to your live repository that you can easily share with others.
+        <span class="front-em">Get ready for your technical review!</span><br /> You don't have to finalize everything before you submit your preprint to <a href="https://neurolibre.org">neurolibre.org</a>. One successful runtime build that contains all your dependencies is enough to start the technical review. We can use the same runtime while updating the content of your preprint during the screening process. This saves time and computational resources.
       </div>
     </div>
-  </div> -->
+  </div>
   {% endblock how_it_works %}
 </div>
 {% endblock main %}

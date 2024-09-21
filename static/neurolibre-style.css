@@ -7,3 +7,8 @@
     background-color: rgb(235, 236, 237);
     position: relative;
 }
+
+.point-red {
+    border-color: rgb(255, 0, 0);
+    color: rgb(255, 0, 0);
+  }
