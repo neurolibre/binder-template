@@ -15,7 +15,7 @@
         <div id="header" class="text-center">
           <h3>Turn reading articles into an interactive experience</h3>
           <div id="explanation">
-            This NeuroLibre service is dedicated to create a software capsule for reproducing the executable content of your living preprints!
+            This service is reserved for <a href="https://neurolibre.org">Neurolibre</a> preprints that have been published.
           </div>
         </div>
         <div id="tutorials" class="text-center">
@@ -25,7 +25,10 @@
 
     {% block form %}
     <form id="build-form" class="form jumbotron" disabled>
-      <h4 id="form-header" class='row'>Please visit <a href="https://neurolibre.org">neurolibre.org</a> to build a reproducible runtime for your preprint</h4>
+    <div class="alert alert-info" role="alert">
+        Please visit <a href="https://preview-binder.conp.cloud">https://preview-binder.conp.cloud</a> to build a reproducible runtime from your Neurolibre-ready repository.
+    </div>
+      <!-- <h4 id="form-header" class='row'>Please visit <a href="https://neurolibre.org">neurolibre.org</a> to build a reproducible runtime for your preprint</h4>
       <input type="hidden" id="provider_prefix" value="{{repo_providers.keys() | list | first}}"/>
       <div class="form-group row">
         <label for="repository">{{(repo_providers.values() | list | first).labels.text}}</label>
@@ -154,7 +157,7 @@
         <div class="panel-body hidden">
           <div id="log"></div>
         </div>
-      </div>
+      </div> -->
     </form>
     {% endblock form %}
     </div>
