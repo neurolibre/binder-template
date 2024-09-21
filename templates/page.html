@@ -1,73 +1,77 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>{% block title %}Neurolibre Binder{% endblock %}</title>
-  {% block head %}
-  <link id="favicon" rel="shortcut icon" type="image/png" href="{{static_url("favicon.ico")}}" />
-  <link href="{{static_url("dist/styles.css")}}" rel="stylesheet"></link>
-  <link rel="stylesheet" href="/extra_static/neurolibre-style.css" type="text/css" media="all">
-  {% endblock head %}
-</head>
-<body>
-  {% block body %}
-  {% block navbar %}
-  <div id="navbar" class="navbar navbar-inverse navbar-default">
-  </div>
-  {% endblock navbar %}
-  {% if banner %}
-  <div id="banner-container">
-    {{ banner | safe }}
-  </div>
-  {% endif %}
+{% extends "templates/page.html" %}
 
-  {% block logo %}
-  <div class="container">
+{% block title %}Neurolibre Binder{% endblock %}
+
+{% block logo %}
+<div class="container">
+  <div class="row">
+    <div id="logo-container">
+      <img id="logo" src={% block logo_image %}"/extra_static/preprint_logo.png"{% endblock logo_image %} width="450px" />
+    </div>
+  </div>
+</div>
+{% endblock logo %}
+
+{% block main %}
+  {% block header %}
+  <div id="header" class="text-center">
+    <h3>Turn reading articles into an interactive experience</h3>
+    <div id="explanation">
+      This NeuroLibre service is dedicated to create a software capsule for reproducing the executable content of your living preprints!
+    </div>
+  </div>
+  <div id="tutorials" class="text-center">
+    <h2>New to NeuroLibre? Get started with a <a href="https://github.com/neurolibre/mystical-article" target="_blank">MyST article template</a> in Python.</h2>
+  </div>
+  {% endblock header %}
+
+  {% block how_it_works %}
+  <div id="how-it-works">
+    <h3 class="text-center">How it works</h3>
+
     <div class="row">
-      <div id="logo-container">
-        <img id="logo" src={% block logo_image %}"/extra_static/preprint_logo.png"{% endblock logo_image %} width="450px" />
+        <div class="col-md-1 col-md-offset-2 point-container">
+          <span class="point point-orange">0</span>
+        </div>
+        <div class="col-md-7 front">
+          <span class="front-em">Data requirement?</span><br />Do not push them to your GitHub repository! If your executable content requires data to generate outputs, NeuroLibre expects a <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html#the-binder-folder-data"><code>data_requirement.json</code></a> file under the <code>binder</code> directory of your repository to download and link it to your reproducible preprint environment. <b>Please make a <a href="https://github.com/neurolibre/neurolibre/issues/new?assignees=&labels=data+requirement&template=data-requirement.md&title=%5BData+Requirement%5D">data download request</a> for us to approve hosting your data!</b> If your preprint does not require data, you can skip this step.
+        </div>
+      </div>
+
+    <div class="row">
+      <div class="col-md-1 col-md-offset-2 point-container">
+        <span class="point point-orange">1</span>
+      </div>
+      <div class="col-md-7 front">
+        <span class="front-em">Enter your <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html">Neurolibre compatible repository</a> information</span><br />Provide in the above form a URL to your repository. Clicking launch will build your Binder repository that will be used to build your article during our technical review.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1 col-md-offset-2 point-container">
+        <span class="point point-red">2</span>
+      </div>
+      <div class="col-md-7 front">
+        <span class="front-em">We build a Docker image of your repository</span><br />Binder will search for a <a href="https://repo2docker.readthedocs.io/en/latest/specification.html">REES</a> compatible dependency file, such as <code>requirements.txt</code> or <code>environment.yml</code>, in the repository's  <code>binder</code> directory (<a href="http://mybinder.readthedocs.io/en/latest/using.html#preparing-a-repository-for-binder">more details on more complex dependencies in documentation</a>). The dependency files will be used to build a Docker image. If an image has already been built for the given repository, it will not be rebuilt. If a new commit has been made, the image will automatically be rebuilt.
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1 col-md-offset-2 point-container">
+        <span class="point point-blue">3</span>
+      </div>
+      <div class="col-md-7 front">
+        <span class="front-em">Get ready for your technical review!</span><br />A <a href="https://jupyterhub.readthedocs.io/en/latest/">JupyterHub</a> server will host your repository's contents. We offer you a reusable link and badge to your live repository that you can easily share with others.
       </div>
     </div>
   </div>
-  {% endblock logo %}
+  {% endblock how_it_works %}
+{% endblock main %}
 
-  {% block main %}
-  {% endblock main %}
-
-  {% block footer %}
-  <div class="container">
-    <div class="row text-center">
-      <h3>Questions?<br />join the <a href="https://discourse.jupyter.org/c/binder">discussion</a>, read the <a href="https://mybinder.readthedocs.io/en/latest/">docs</a>, see the <a href="https://github.com/jupyterhub/binderhub">code</a></h3>
-    </div>
+{% block footer %}
+<div class="container">
+  <div class="row text-center">
+    <h3>questions?<br />join the <a href="https://discourse.jupyter.org/c/binder">discussion</a>, read the <a href="https://mybinder.readthedocs.io/en/latest/">docs</a>, see the <a href="https://github.com/jupyterhub/binderhub">code</a></h3>
   </div>
-  {% endblock footer %}
-
-  {% if google_analytics_code %}
-  <script>
-    // Only load GA if DNT is not set
-    if (navigator.doNotTrack != "1" && // Most Firefox & Chrome
-      window.doNotTrack != "1" && // IE & Safari
-      navigator.msDoNotTrack != "1" // Old IE
-  ) {
-    console.log("Loading Google Analytics, since Do Not Track is off");
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', '{{ google_analytics_code }}', '{{ google_analytics_domain }}',
-      {'storage': 'none'});
-    ga('set', 'anonymizeIp', true);
-    ga('send', 'pageview');
-  }
-  </script>
-  {% endif %}
-  {% if extra_footer_scripts %}
-  {% for script in extra_footer_scripts|dictsort %}
-  <script>
-    {{ script[1]|safe }}
-  </script>
-  {% endfor %}
-  {% endif %}
-  {% endblock body %}
-</body>
-</html>
+</div>
+{% endblock footer %}
