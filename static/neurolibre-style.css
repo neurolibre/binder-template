@@ -1,0 +1,9 @@
+#banner-container {
+    text-align: left;
+    color: white !important;
+    background-color: red!important;
+    padding: 16px;
+    width: 100%;
+    background-color: rgb(235, 236, 237);
+    position: relative;
+}

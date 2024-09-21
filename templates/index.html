@@ -7,17 +7,7 @@
 {{ super() }}
 {% endblock head %}
 
-{% block title %}Neurolibre Preview Binder{% endblock %}
-
-{% block logo %}
-<div class="container">
-  <div class="row">
-    <div id="logo-container">
-      <img id="logo" src={% block logo_image %}"/extra_static/preprint_logo.png"{% endblock logo_image %} width="450px" />
-    </div>
-  </div>
-</div>
-{% endblock logo %}
+{% block title %}Neurolibre Binder{% endblock %}
 
 {% block main %}
   {% block header %}
