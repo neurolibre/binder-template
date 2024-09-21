@@ -1,5 +1,12 @@
 {% extends "page.html" %}
 
+{% block head %}
+<meta id="base-url" data-url="{{base_url}}">
+<meta id="badge-base-url" data-url="{{badge_base_url}}">
+<script src="{{static_url("dist/bundle.js")}}"></script>
+{{ super() }}
+{% endblock head %}
+
 {% block title %}Neurolibre Preview Binder{% endblock %}
 
 {% block logo %}
@@ -69,9 +76,8 @@
 {% endblock main %}
 
 {% block footer %}
-<div class="container">
-  <div class="row text-center">
-    <h3>questions?<br />join the <a href="https://discourse.jupyter.org/c/binder">discussion</a>, read the <a href="https://mybinder.readthedocs.io/en/latest/">docs</a>, see the <a href="https://github.com/jupyterhub/binderhub">code</a></h3>
-  </div>
-</div>
+{{ super () }}
+<script type="text/javascript">
+indexMain();
+</script>
 {% endblock footer %}
