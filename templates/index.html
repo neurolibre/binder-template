@@ -13,9 +13,9 @@
     <div class="col-lg-10 col-lg-offset-1">
     {% block header %}
         <div id="header" class="text-center">
-          <h3>Turn reading articles into an interactive experience</h3>
+          <h3 style="color: #762121;">Turn reading articles into an interactive experience</h3>
           <div id="explanation">
-            This service is reserved for <a href="https://neurolibre.org">Neurolibre</a> preprints that have been published.
+            ⚠️ This service is reserved for <a href="https://neurolibre.org">Neurolibre</a> preprints that have been published. ⚠️
           </div>
         </div>
         <div id="tutorials" class="text-center">
@@ -88,7 +88,6 @@
         </div>
       </div>
 
-      <!--url section-->
       <div class="url row">
           <div class="dropdownmenu">
             <label>Copy the URL below and share your Binder with others:</label>
@@ -107,7 +106,7 @@
             <a href="#" title="show badge snippets"><span id="badge-snippet-caret" class="glyphicon glyphicon-triangle-right"></span></a>
           </div>
           <div id="badge-snippets" class="hidden">
-            <!--Markdown section-->
+
             <div  class="badge-snippet-row">
                <pre id="markdown-badge-snippet" data-default="Fill in the fields to see the markdown badge snippet."></pre>
                <img class="icon" src="{{static_url("images/markdown-icon.svg")}}" alt="Markdown icon">
@@ -116,7 +115,7 @@
                   data-clipboard-target="#markdown-badge-snippet"
                   alt="Copy markdown link to clipboard">
             </div>
-            <!--RST section-->
+
             <div  class="badge-snippet-row">
                 <pre id="rst-badge-snippet" data-default="Fill in the fields to see the rST badge snippet."></pre>
                 <img class="icon" src="{{static_url("images/rst-icon.svg")}}" alt="restructured text icon">
@@ -157,7 +156,8 @@
         <div class="panel-body hidden">
           <div id="log"></div>
         </div>
-      </div> -->
+      </div> 
+    -->
     </form>
     {% endblock form %}
     </div>
@@ -171,7 +171,7 @@
           <span class="point point-orange">0</span>
         </div>
         <div class="col-md-7 front">
-          <span class="front-em">Data requirement?</span><br />Do not push them to your GitHub repository! If your executable content requires data to generate outputs, NeuroLibre expects a <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html#the-binder-folder-data"><code>data_requirement.json</code></a> file under the <code>binder</code> directory of your repository to download and link it to your reproducible preprint environment. <b>Please make a <a href="https://github.com/neurolibre/neurolibre/issues/new?assignees=&labels=data+requirement&template=data-requirement.md&title=%5BData+Requirement%5D">data download request</a> for us to approve hosting your data!</b> If your preprint does not require data, you can skip this step.
+          <span class="front-em">Data requirement?</span><br />If your executable content requires data to generate outputs, NeuroLibre expects a <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html#the-binder-folder-data"><code>data_requirement.json</code></a> file under the <code>binder</code> directory of your repository to download and link it to your reproducible preprint environment. <b>Please make a <a href="https://github.com/neurolibre/neurolibre/issues/new?assignees=&labels=data+requirement&template=data-requirement.md&title=%5BData+Requirement%5D">data download request</a> for us to approve hosting your data!</b> If your preprint does not require data, you can skip this step.
         </div>
       </div>
 
@@ -189,7 +189,7 @@
         <span class="point point-red">2</span>
       </div>
       <div class="col-md-7 front">
-        <span class="front-em">We build a Docker image of your repository</span><br />Binder will search for a <a href="https://repo2docker.readthedocs.io/en/latest/specification.html">REES</a> compatible dependency file, such as <code>requirements.txt</code> or <code>environment.yml</code>, in the repository's  <code>binder</code> directory (<a href="http://mybinder.readthedocs.io/en/latest/using.html#preparing-a-repository-for-binder">more details on more complex dependencies in documentation</a>). The dependency files will be used to build a Docker image. If an image has already been built for the given repository, it will not be rebuilt. If a new commit has been made, the image will automatically be rebuilt.
+        <span class="front-em">Your executable content needs a Docker image!</span><br />Binder will search for a <a href="https://repo2docker.readthedocs.io/en/latest/specification.html">REES</a> compatible dependency file, such as <code>requirements.txt</code> or <code>environment.yml</code>, in the repository's  <code>binder</code> directory (<a href="http://mybinder.readthedocs.io/en/latest/using.html#preparing-a-repository-for-binder">more details on more complex dependencies in documentation</a>). The dependency files will be used to build a Docker image. If an image has already been built for the given repository, it will not be rebuilt. If a new commit has been made, the image will automatically be rebuilt.
       </div>
     </div>
 
