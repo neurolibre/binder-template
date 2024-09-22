@@ -14,11 +14,25 @@
   }
 
 .btn-submit {
-    background-color: darkred !important;
+    background-color: crimson !important;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.075);
     color: white;
     border: none;
     height: 35px;
     width: 100%;
     border-radius: 4px;
+}
+
+#build-form {
+    color: rgb(50, 50, 50);
+    padding: 55px;
+    padding-top: 25px;
+    padding-bottom: 20px;
+    border: solid;
+    border-color: crimson;
+}
+
+a {
+    color: crimson;
+    text-decoration: none;
 }
