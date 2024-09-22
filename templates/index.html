@@ -165,33 +165,35 @@
   </div>
   {% block how_it_works %}
   <div id="how-it-works">
-    <h3 class="text-center">Living preprints in 4 steps</h3>
+    <h3 class="text-center">Get your living preprint ready in 5 steps</h3>
     <div class="row">
         <div class="col-md-1 col-md-offset-2 point-container">
-          <span class="point point-red">1</span>
+          <span class="point point-red-new">1</span>
         </div>
         <div class="col-md-7 front">
-          <span class="front-em">Data requirement?</span><br />If your executable content requires data to generate outputs, NeuroLibre expects a <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html#the-binder-folder-data"><code>data_requirement.json</code></a> file under the <code>binder</code> directory of your repository to download and link it to your reproducible preprint environment. <b>Please make a <a href="https://github.com/neurolibre/neurolibre/issues/new?assignees=&labels=data+requirement&template=data-requirement.md&title=%5BData+Requirement%5D">data download request</a> for us to approve hosting your data!</b> If your preprint does not require data, you can skip this step.
+          <span class="front-em"> 💽 Data requirement?</span><br />If your executable content requires data to generate outputs, NeuroLibre expects a <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html#the-binder-folder-data" target="_blank"><code>data_requirement.json</code></a> file under the <code>binder</code> directory of your repository to download and link it to your reproducible preprint environment. <br> Please make a <a href="https://github.com/neurolibre/neurolibre/issues/new?assignees=&labels=data+requirement&template=data-requirement.md&title=%5BData+Requirement%5D">data download request</a> for us to approve hosting your data! If your preprint does not require data, you can skip this step.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-1 col-md-offset-2 point-container">
+          <span class="point point-red">2</span>
+        </div>
+        <div class="col-md-7 front">
+          <span class="front-em"> 🐳 Your executable content needs a Docker image!</span><br /> ✨ But you don't have to build it yourself!✨ <br> Binder will search for <a href="https://repo2docker.readthedocs.io/en/latest/specification.html" target="_blank">REES</a> compatible dependency files, such as <code>requirements.txt</code> or <code>environment.yml</code>, in the repository's  <code>binder</code> directory and will use them to build a Docker image for you. <br> This service will check the latest commit (<code>HEAD</code>) of your repository on the <code>main</code> branch to decide whether a new image needs to be built.
         </div>
       </div>
 
     <div class="row">
       <div class="col-md-1 col-md-offset-2 point-container">
-        <span class="point point-orange">2</span>
+        <span class="point point-orange">3</span>
       </div>
       <div class="col-md-7 front">
-        <span class="front-em">Enter your <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html">Neurolibre compatible repository</a> information</span><br />Provide in the above form a URL to your repository. Clicking launch will build your Binder repository that will be used to build your article during our technical review.
+        <span class="front-em">Enter your <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html" target="_blank">Neurolibre compatible repository</a> information</span><br />Provide in the above form a URL to your repository. Clicking launch will build your Binder repository that will be used to build your article during our technical review.
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-md-1 col-md-offset-2 point-container">
-        <span class="point point-red">3</span>
-      </div>
-      <div class="col-md-7 front">
-        <span class="front-em">Your executable content needs a Docker image!</span><br />Binder will search for a <a href="https://repo2docker.readthedocs.io/en/latest/specification.html">REES</a> compatible dependency file, such as <code>requirements.txt</code> or <code>environment.yml</code>, in the repository's  <code>binder</code> directory (<a href="http://mybinder.readthedocs.io/en/latest/using.html#preparing-a-repository-for-binder">more details on more complex dependencies in documentation</a>). The dependency files will be used to build a Docker image. If an image has already been built for the given repository, it will not be rebuilt. If a new commit has been made, the image will automatically be rebuilt.
-      </div>
-    </div>
+
 
     <div class="row">
       <div class="col-md-1 col-md-offset-2 point-container">
