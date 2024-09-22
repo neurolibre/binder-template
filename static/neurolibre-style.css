@@ -13,7 +13,7 @@
     color: rgb(255, 0, 0);
   }
 
-  .btn-submit {
+.btn-submit {
     background-color: darkred !important;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.075);
     color: white;
