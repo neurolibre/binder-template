@@ -161,7 +161,7 @@
           <span class="point point-red-new">1</span>
         </div>
         <div class="col-md-7 front">
-          <span class="front-em"> 💽 Data requirement?</span><br />If your executable content requires data to generate outputs, NeuroLibre expects a <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html#the-binder-folder-data" target="_blank"><code>data_requirement.json</code></a> file under the <code>binder</code> directory of your repository to download and link it to your reproducible preprint environment. <br> Please make a <a href="https://github.com/neurolibre/neurolibre/issues/new?assignees=&labels=data+requirement&template=data-requirement.md&title=%5BData+Requirement%5D">data download request</a> for us to approve hosting your data! If your preprint does not require data, you can skip this step.
+          <span class="front-em"> 💽 Data requirement?</span><br />If your executable content requires data to generate outputs, NeuroLibre expects a <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html#the-binder-folder-data" target="_blank"><code>data_requirement.json</code></a> file under the <code>binder</code> directory of your repository to download and link it to your reproducible preprint environment. <br><br> Please make a <a href="https://github.com/neurolibre/neurolibre/issues/new?assignees=&labels=data+requirement&template=data-requirement.md&title=%5BData+Requirement%5D">data download request</a> for us to approve hosting your data! If your preprint does not require data, you can skip this step.
         </div>
       </div>
 
@@ -170,7 +170,7 @@
           <span class="point point-red">2</span>
         </div>
         <div class="col-md-7 front">
-          <span class="front-em"> 🐳 Your executable content needs a Docker image!</span><br /> ✨ But you don't have to build it yourself!✨ <br> Simply add <a href="https://repo2docker.readthedocs.io/en/latest/specification.html" target="_blank">REES</a> compatible dependency files, such as <code>requirements.txt</code> or <code>environment.yml</code> (for 🐍), in the repository's  <code>binder</code> directory and we will use them to build a Docker image for you. Check out (<a href="http://mybinder.readthedocs.io/en/latest/using.html#preparing-a-repository-for-binder">documentaiton</a>) for complete list of configuration files for different languages (<code>R</code>, <code>Julia</code>, <code>Octave</code> and more). <br> This service will check the latest commit (<code>HEAD</code>) of your repository on the <code>main</code> branch to decide whether a new image needs to be built.
+          <span class="front-em"> 🐳 Your executable content needs a Docker image!</span><br /> ✨ But you don't have to build it yourself!✨ <br> Simply add <a href="https://repo2docker.readthedocs.io/en/latest/specification.html" target="_blank">REES</a> compatible dependency files, such as <code>requirements.txt</code> or <code>environment.yml</code> (for 🐍), in the repository's  <code>binder</code> directory and we will use them to build a Docker image for you. <br><br> Check out (<a href="http://mybinder.readthedocs.io/en/latest/using.html#preparing-a-repository-for-binder">documentation</a>) for complete list of configuration files for different languages (<code>R</code>, <code>Julia</code>, <code>Octave</code> and more). <br><br> This service will check the latest commit (<code>HEAD</code>) of your repository on the <code>main</code> branch to decide whether a new image needs to be built.
         </div>
       </div>
 
@@ -179,7 +179,7 @@
         <span class="point point-orange">3</span>
       </div>
       <div class="col-md-7 front">
-        <span class="front-em"> 🚀 Enter your <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html" target="_blank">Neurolibre compatible repository</a>  and launch!</span><br /> Organize your notebooks, markdown files, and other content as described <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html" target="_blank">here</a>. Click launch to trigger a build of your reproducible runtime. <br> This service will check the latest commit (<code>HEAD</code>) of your repository on the <code>main</code> branch to decide whether a new image needs to be built. If your dependencies will not change after the latest successful build, you can proceed to building your living preprint!
+        <span class="front-em"> 🚀 Enter your <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html" target="_blank">Neurolibre compatible repository</a>  and launch!</span><br /> Organize your notebooks, markdown files, and other content as described <a href="https://docs.neurolibre.org/en/latest/STRUCTURE.html" target="_blank">here</a>. Click launch to trigger a build of your reproducible runtime. <br><br> This service will check the latest commit (<code>HEAD</code>) of your repository on the <code>main</code> branch to decide whether a new image needs to be built. If your dependencies will not change after the latest successful build, you can proceed to building your living preprint!
       </div>
     </div>
 
