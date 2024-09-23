@@ -79,7 +79,7 @@
             repoValue = repoValue.replace(/\/$/, '');
             
             // Construct the URL
-            var url = 'https://tyring/' + repoValue + '/HEAD';
+            var url = 'https://preview.neurolibre.org/api/validate?repo_url=' + repoValue;
             
             // Open the URL in a new tab
             window.open(url, '_blank');
