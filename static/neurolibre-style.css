@@ -23,6 +23,16 @@
     border-radius: 4px;
 }
 
+#check-button {
+    background-color: rgb(20, 143, 220) !important;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.075);
+    color: white;
+    border: none;
+    height: 35px;
+    width: 100%;
+    border-radius: 4px;
+}
+
 #build-form {
     color: rgb(50, 50, 50);
     padding: 55px;

@@ -65,5 +65,28 @@
   {% endfor %}
   {% endif %}
   {% endblock body %}
+
+  <script>
+    document.getElementById('check-button').addEventListener('click', function() {
+        var repoInput = document.getElementById('repository');
+        var repoValue = repoInput.value.trim();
+        
+        if (repoValue) {
+            // Remove 'https://github.com/' if it's present
+            repoValue = repoValue.replace('https://github.com/', '');
+            
+            // Remove trailing slash if present
+            repoValue = repoValue.replace(/\/$/, '');
+            
+            // Construct the URL
+            var url = 'https://tyring/' + repoValue + '/HEAD';
+            
+            // Open the URL in a new tab
+            window.open(url, '_blank');
+        } else {
+            alert('Please enter a valid GitHub repository.');
+        }
+    });
+  </script>
 </body>
 </html>
