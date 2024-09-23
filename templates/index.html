@@ -26,7 +26,7 @@
     {% endblock header %}
 
     {% block form %}
-    <form id="build-form" class="form jumbotron" disabled>
+    <form id="build-form" class="form jumbotron">
       <h4 id="form-header" class='row'>Where's your awesome NeuroLibre-ready GitHub repo hiding?</h4>
       <input type="hidden" id="provider_prefix" value="{{repo_providers.keys() | list | first}}"/>
       <div class="form-group row">
