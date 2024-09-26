@@ -46,12 +46,12 @@
           <input class="form-control" type="text" id="repository" data-lpignore="true" placeholder="owner/repo or https://github.com/owner/repo"/>
         </div>
       </div>
-      <div class="form-row row justify-content-center">
-        <!-- <div class="form-group col-md-4">
+      <div class="form-row row justify-content-center hidden row">
+        <div class="form-group col-md-4">
           <label for="ref">Reference</label>
           <input class="form-control" type="text" id="ref" placeholder="Latest commit on main will be used" disabled/>
-        </div> -->
-        <!-- <div class="form-group col-md-6">
+        </div>
+        <div class="form-group col-md-6">
           <label for="filepath">Path to a notebook file (optional)</label>
           <div class="input-group">
             <input class="form-control" type="text" id="filepath"placeholder="MyST or JupyterBook content organization expected" disabled/>
@@ -71,20 +71,21 @@
               </ul>
             </div>
           </div>
-        </div> -->
-
-
-          <div class="form-group col-md-6">
-            <div class="btn-group" id="launch-buttons">
-              <button id="check-button" class="btn-submit" type="button">🌱 validate repository content 🌱</button>
-            </div>
-          </div>
-          <div class="form-group col-md-6">
-            <div class="btn-group" id="launch-buttons">
-              <button id="submit" class="btn-submit" type="submit">✨ launch build ✨</button>
-            </div>
-          </div>
+        </div>
       </div>
+      <div class="form-row row justify-content-center hidden row">
+      <div class="form-group col-md-6">
+        <div class="btn-group" id="launch-buttons">
+          <button id="check-button" class="btn-submit" type="button">🌱 validate repository content 🌱</button>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <div class="btn-group" id="launch-buttons">
+          <button id="submit" class="btn-submit" type="submit">✨ launch build ✨</button>
+        </div>
+        </div>
+      </div>
+
       <div class="url row">
           <div class="dropdownmenu">
             <label>Copy the URL below and share your Binder with others:</label>
